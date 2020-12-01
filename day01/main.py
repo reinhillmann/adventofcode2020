@@ -12,7 +12,6 @@ def find_two(input, target):
 
 
 def find_three(input, target):
-    i, j = 0, 0
     for a in range(0, len(input)-2):
         for b in range(a+1, len(input)-1):
             x, y = input[a], input[b]
@@ -49,6 +48,7 @@ if __name__ == "__main__":
         1679, 1959, 1691, 1875
     ]
     target = 2020
+    print(len(input))
 
     print_results("TWO", find_two(input, target))
     print_results("THREE", find_three(input, target))
