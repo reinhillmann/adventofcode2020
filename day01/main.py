@@ -48,7 +48,6 @@ if __name__ == "__main__":
         1679, 1959, 1691, 1875
     ]
     target = 2020
-    print(len(input))
 
     print_results("TWO", find_two(input, target))
     print_results("THREE", find_three(input, target))
