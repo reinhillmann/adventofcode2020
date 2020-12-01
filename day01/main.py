@@ -18,24 +18,24 @@ input = [
 
 
 def find_two():
-  for a in range(0, len(input)-2):
-    for b in range(a+1, len(input)-1):
-      x, y = input[a], input[b]
-      if x + y == 2020:
-        print(f"TWO: x={x}, y={y}, product={x * y}")
-        return
+    for a in range(0, len(input)-2):
+        for b in range(a+1, len(input)-1):
+            x, y = input[a], input[b]
+            if x + y == 2020:
+                print(f"TWO: x={x}, y={y}, product={x * y}")
+                return
 
 
 def find_three():
-  for a in range(0, len(input)-2):
-    for b in range(a+1, len(input)-1):
-      for c in range(b+1, len(input)):
-        x, y, z = input[a], input[b], input[c]
-        if x + y + z == 2020:
-          print(f"THREE: x={x}, y={y}, z={z}, product={x * y * z}")
-          return
+    for a in range(0, len(input)-2):
+        for b in range(a+1, len(input)-1):
+            for c in range(b+1, len(input)):
+                x, y, z = input[a], input[b], input[c]
+                if x + y + z == 2020:
+                    print(f"THREE: x={x}, y={y}, z={z}, product={x * y * z}")
+                    return
 
 
 if __name__ == "__main__":
-  find_two()
-  find_three()
+    find_two()
+    find_three()
