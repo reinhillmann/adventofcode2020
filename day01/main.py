@@ -3,7 +3,7 @@
 import numpy
 
 
-def find_two(input, target):
+def find_two(input, target) -> (int, int):
     for a in range(0, len(input)-2):
         for b in range(a+1, len(input)-1):
             x, y = input[a], input[b]
@@ -11,7 +11,7 @@ def find_two(input, target):
                 return x, y
 
 
-def find_three(input, target):
+def find_three(input, target) -> (int, int, int):
     for a in range(0, len(input)-2):
         for b in range(a+1, len(input)-1):
             x, y = input[a], input[b]
@@ -31,7 +31,10 @@ def print_results(heading, numbers):
 
 
 if __name__ == "__main__":
-    input = [
+    test_input = [
+        1721, 979, 366, 299, 675, 1456
+    ]
+    real_input = [
         1822, 1917, 1642, 1617, 1941, 1740, 1529, 1896, 1880, 568, 1897, 1521, 1832, 1936, 611,
         1475, 1950, 1895, 1532, 1721, 1498, 1905, 1770, 1845, 2003, 1854, 1705, 1916, 1913, 1956,
         1798, 1823, 1955, 1713, 1942, 1710, 1696, 1590, 1966, 1476, 1800, 1672, 1533, 1524, 1957,
@@ -49,5 +52,7 @@ if __name__ == "__main__":
     ]
     target = 2020
 
-    print_results("TWO", find_two(input, target))
-    print_results("THREE", find_three(input, target))
+    assert find_two(test_input, target) == (1721, 299)
+    assert find_three(test_input, target) == (979, 366, 675)
+    print_results("TWO", find_two(real_input, target))
+    print_results("THREE", find_three(real_input, target))
