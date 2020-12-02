@@ -3,11 +3,11 @@
 import re
 
 def parse_password(password):
-        if not password:
-            return (None, None, None, None)
-        m = re.match(r"(?P<num1>[0-9]+)-(?P<num2>[0-9]+) (?P<letter>[a-z]): (?P<password>[a-z]+)", password)
-        d = m.groupdict()
-        return (int(d['num1']), int(d['num2']), d['letter'], d['password'])
+    if not password:
+        return (None, None, None, None)
+    m = re.match(r"(?P<num1>[0-9]+)-(?P<num2>[0-9]+) (?P<letter>[a-z]): (?P<password>[a-z]+)", password)
+    d = m.groupdict()
+    return (int(d['num1']), int(d['num2']), d['letter'], d['password'])
 
 def correct_passwords_part_1(input):
     correct_password_count = 0
