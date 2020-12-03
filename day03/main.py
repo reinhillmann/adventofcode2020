@@ -4,8 +4,7 @@ import numpy
 
 def load_data(filename) -> [str]:
     with open(filename, "r") as f:
-        data = f.readlines()
-        return [r.rstrip() for r in data]
+        return [r.rstrip() for r in f.readlines()]
 
 def count_trees(landscape, slope) -> int:
     cols = len(landscape[0])
