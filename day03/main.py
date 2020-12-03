@@ -6,7 +6,7 @@ def load_data(filename) -> [str]:
     with open(filename, "r") as f:
         return f.readlines()
 
-def count_trees(landscape, slope):
+def count_trees(landscape, slope) -> int:
     cols = len(landscape[0])
     rows = len(landscape)
     row = 0
