@@ -3,7 +3,7 @@
 import math
 
 def load_data(filename):
-    with open(filename, "r") as f:
+    with open(filename, 'r') as f:
         return [r.rstrip() for r in f.readlines()]
 
 def binary_part(data, min_val, max_val):
