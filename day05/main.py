@@ -6,10 +6,6 @@ def load_data(filename):
     with open(filename, 'r') as f:
         return [r.rstrip() for r in f.readlines()]
 
-def binary_number(number):
-    number = number.replace('B', '1').replace('R', '1').replace('F', '0').replace('L', '0')
-    return int(number, 2)
-
 def decode_boarding_pass(bp):
     bp = bp.replace('B', '1').replace('R', '1').replace('F', '0').replace('L', '0')
     row, seat = int(bp[0:7], 2), int(bp[7:10], 2)
