@@ -6,18 +6,13 @@ def load_data(filename):
     with open(filename, 'r') as f:
         return [r.rstrip() for r in f.readlines()]
 
-def binary_part(data, min_val, max_val):
-    if len(data) == 0:
-        return min_val
-    half = math.ceil((max_val - min_val) / 2)
-    if data[0] in ['B', 'R']:
-        return binary_part(data[1:], min_val + half, max_val)
-    if data[0] in ['F', 'L']:
-        return binary_part(data[1:], min_val, max_val - half)
+def binary_number(number):
+    number = number.replace('B', '1').replace('R', '1').replace('F', '0').replace('L', '0')
+    return int(number, 2)
 
-def decode_boarding_pass(boarding_pass):
-    row = binary_part(boarding_pass[0:7], 0, 127)
-    seat = binary_part(boarding_pass[7:10], 0, 7)
+def decode_boarding_pass(bp):
+    bp = bp.replace('B', '1').replace('R', '1').replace('F', '0').replace('L', '0')
+    row, seat = int(bp[0:7], 2), int(bp[7:10], 2)
     return (row, seat, row * 8 + seat)
 
 if __name__ == "__main__":
@@ -32,4 +27,5 @@ if __name__ == "__main__":
     # Part 2
     seats_ids = [decode_boarding_pass(bp)[2] for bp in data]
     expected_ids = [n for n in range(min(seats_ids), max(seats_ids)+1)]
-    print(set(expected_ids) - set(seats_ids))
+    for n in set(expected_ids) - set(seats_ids):
+        print(n)
